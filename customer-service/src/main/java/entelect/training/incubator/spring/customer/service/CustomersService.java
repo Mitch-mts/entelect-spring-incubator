@@ -1,50 +1,23 @@
 package entelect.training.incubator.spring.customer.service;
 
+import entelect.training.incubator.spring.customer.dto.CustomerRequest;
 import entelect.training.incubator.spring.customer.model.Customer;
-import entelect.training.incubator.spring.customer.model.CustomerSearchRequest;
-import entelect.training.incubator.spring.customer.model.SearchType;
-import entelect.training.incubator.spring.customer.repository.CustomerRepository;
-import org.springframework.stereotype.Service;
+import entelect.training.incubator.spring.customer.dto.CustomerSearchRequest;
 
-import java.util.*;
-import java.util.function.Supplier;
+import java.util.List;
 
-@Service
-public class CustomersService {
-
-    private final CustomerRepository customerRepository;
-
-    public CustomersService(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
-
-    public Customer createCustomer(Customer customer) {
-        return customerRepository.save(customer);
-    }
-
-    public List<Customer> getCustomers() {
-        Iterable<Customer> customerIterable = customerRepository.findAll();
-
-        List<Customer> result = new ArrayList<>();
-        customerIterable.forEach(result::add);
-
-        return result;
-    }
-
-    public Customer getCustomer(Integer id) {
-        Optional<Customer> customerOptional = customerRepository.findById(id);
-        return customerOptional.orElse(null);
-    }
-
-    public Customer searchCustomers(CustomerSearchRequest searchRequest) {
-        Map<SearchType, Supplier<Optional<Customer>>> searchStrategies = new HashMap<>();
-
-        searchStrategies.put(SearchType.NAME_SEARCH, () -> customerRepository.findByFirstNameAndLastName(searchRequest.getFirstName(), searchRequest.getLastName()));
-        searchStrategies.put(SearchType.PASSPORT_SEARCH, () -> customerRepository.findByPassportNumber(searchRequest.getPassport()));
-        searchStrategies.put(SearchType.USER_SEARCH, () -> customerRepository.findByUsername(searchRequest.getUsername()));
-
-        Optional<Customer> customerOptional = searchStrategies.get(searchRequest.getSearchType()).get();
-
-        return customerOptional.orElse(null);
-    }
+/*
+* using an interface to define methods when making calls from controller to the business logic is a best practice in software dev
+* this approach adheres to the key principles of OOP
+* making use of interface for defining implementation methods for business logic has the below advantages
+* 1. Abstraction and loose coupling - this enhances flexibility and maintainability
+* 2. Testability - simplifies unit testing
+* 3. Adherence to SOLID principles
+* 4. Separation of concerns
+* 5. Scalability*/
+public interface CustomersService {
+    Customer createCustomer(CustomerRequest customer);
+    Customer searchCustomers(CustomerSearchRequest searchRequest);
+    Customer getCustomer(Integer id);
+    List<Customer> getCustomers();
 }

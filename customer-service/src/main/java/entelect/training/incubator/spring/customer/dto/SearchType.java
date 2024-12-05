@@ -1,4 +1,4 @@
-package entelect.training.incubator.spring.customer.model;
+package entelect.training.incubator.spring.customer.dto;
 
 public enum SearchType {
     NAME_SEARCH,

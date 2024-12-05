@@ -1,6 +1,7 @@
 package entelect.training.incubator.spring.flight.repository;
 
 import entelect.training.incubator.spring.flight.model.Flight;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface FlightRepository extends CrudRepository<Flight, Integer> {
+public interface FlightRepository extends JpaRepository<Flight, Integer> {
     
     List<Flight> findByDepartureTimeBetween(@Param("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
                                             @Param("endDate")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)  LocalDateTime endDate);
