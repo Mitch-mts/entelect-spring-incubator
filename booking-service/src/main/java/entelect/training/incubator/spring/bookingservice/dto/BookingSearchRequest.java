@@ -1,4 +1,4 @@
-package entelect.training.incubator.spring.bookingservice.config.dto;
+package entelect.training.incubator.spring.bookingservice.dto;
 
 import lombok.Data;
 

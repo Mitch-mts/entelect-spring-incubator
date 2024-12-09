@@ -1,6 +1,6 @@
 package entelect.training.incubator.spring.bookingservice.respository;
 
-import entelect.training.incubator.spring.bookingservice.config.model.Booking;
+import entelect.training.incubator.spring.bookingservice.model.Booking;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

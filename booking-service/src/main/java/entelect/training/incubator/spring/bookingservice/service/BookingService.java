@@ -1,7 +1,7 @@
 package entelect.training.incubator.spring.bookingservice.service;
 
-import entelect.training.incubator.spring.bookingservice.config.dto.BookingRequest;
-import entelect.training.incubator.spring.bookingservice.config.model.Booking;
+import entelect.training.incubator.spring.bookingservice.dto.BookingRequest;
+import entelect.training.incubator.spring.bookingservice.model.Booking;
 
 import java.util.List;
 

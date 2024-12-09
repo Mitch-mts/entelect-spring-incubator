@@ -1,4 +1,4 @@
-package entelect.training.incubator.spring.bookingservice.config.model;
+package entelect.training.incubator.spring.bookingservice.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

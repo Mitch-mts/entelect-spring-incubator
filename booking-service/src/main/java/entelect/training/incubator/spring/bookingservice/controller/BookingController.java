@@ -1,7 +1,7 @@
 package entelect.training.incubator.spring.bookingservice.controller;
 
-import entelect.training.incubator.spring.bookingservice.config.dto.BookingRequest;
-import entelect.training.incubator.spring.bookingservice.config.model.Booking;
+import entelect.training.incubator.spring.bookingservice.dto.BookingRequest;
+import entelect.training.incubator.spring.bookingservice.model.Booking;
 import entelect.training.incubator.spring.bookingservice.service.BookingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.awt.print.Book;
 import java.util.List;
 
 @RestController
