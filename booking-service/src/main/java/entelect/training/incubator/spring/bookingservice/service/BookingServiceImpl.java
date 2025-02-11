@@ -1,6 +1,8 @@
 package entelect.training.incubator.spring.bookingservice.service;
 
 import entelect.training.incubator.spring.bookingservice.dto.BookingRequest;
+import entelect.training.incubator.spring.bookingservice.dto.Customer;
+import entelect.training.incubator.spring.bookingservice.dto.Flight;
 import entelect.training.incubator.spring.bookingservice.model.Booking;
 import entelect.training.incubator.spring.bookingservice.respository.BookingRepository;
 import entelect.training.incubator.spring.bookingservice.rest.BookingClientService;
@@ -28,9 +30,7 @@ public class BookingServiceImpl implements BookingService {
         var customerExists = bookingClientService.checkIfCustomerExists(request.getCustomerId());
         var flightExists = bookingClientService.checkIfFlightExists(request.getFlightId());
 
-        if (customerExists == null || flightExists == null) {
-            throw new RuntimeException("Booking could not be saved, Flight or Customer details not found");
-        }
+        validateCustomerAndFlight(customerExists, flightExists);
 
         Booking booking = Booking.builder()
                 .customerId(request.getCustomerId())
@@ -40,6 +40,12 @@ public class BookingServiceImpl implements BookingService {
                 .build();
 
         return bookingRepository.save(booking);
+    }
+
+    private static void validateCustomerAndFlight(Customer customerExists, Flight flightExists) {
+        if (customerExists == null || flightExists == null) {
+            throw new RuntimeException("Booking could not be saved, Flight or Customer details not found");
+        }
     }
 
     @Override
