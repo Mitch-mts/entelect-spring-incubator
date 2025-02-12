@@ -1,0 +1,18 @@
+6 types of Bean scopes in spring framework
+
+1. singleton
+When we define a bean with the singleton scope, the container creates a single instance of that bean;
+all requests for that bean name will return the same object, which is cached.
+Any modifications to the object will be reflected in all references to the bean.
+This scope is the default value if no other scope is specified.
+
+2. prototype
+A bean with the prototype scope will return a different instance every time it is requested from the container.
+It is defined by setting the value prototype to the @Scope annotation in the bean definition
+
+3. request
+4. session
+5. application
+6. websocket
+
+among the 6 these ones are only available in a web-aware application which are: request, session, application and websocket
