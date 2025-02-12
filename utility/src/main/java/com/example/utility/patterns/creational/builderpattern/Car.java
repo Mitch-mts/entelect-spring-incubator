@@ -1,4 +1,4 @@
-package com.example.utility.builderpattern;
+package com.example.utility.patterns.creational.builderpattern;
 
 public class Car {
     /*
