@@ -1,10 +1,13 @@
 package com.example.utility.patterns.creational.builderpattern;
 
+import lombok.Getter;
+
 public class Car {
     /*
     * Builder is a creational design pattern that lets you construct complex objects step by step.
     * The pattern allows you to produce different types and representations of an object using the same construction code.*/
     private final String engine;
+    @Getter
     private final int wheels;
     private final boolean sunroof;
     private final String color;
@@ -16,20 +19,8 @@ public class Car {
         this.color = builder.color;
     }
 
-    public String getEngine() {
-        return engine;
-    }
-
-    public int getWheels() {
-        return wheels;
-    }
-
     public boolean hasSunroof() {
         return sunroof;
-    }
-
-    public String getColor() {
-        return color;
     }
 
     @Override
@@ -38,8 +29,8 @@ public class Car {
     }
 
     public static class CarBuilder {
-        private String engine;
-        private int wheels;
+        private final String engine;
+        private final int wheels;
         private boolean sunroof = false;
         private String color = "Black";
 
