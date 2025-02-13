@@ -1,5 +1,5 @@
 package com.example.utility.patterns.structural.composite;
 
-public interface Employee {
+public interface FileSystemComponent {
     void showDetails();
 }
