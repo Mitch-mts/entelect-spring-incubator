@@ -1,7 +1,7 @@
 package com.example.utility.patterns.bahavioral.command;
 
 class LightOnCommand implements Command {
-    private Light light;
+    private final Light light;
     
     LightOnCommand(Light light) {
         this.light = light;
