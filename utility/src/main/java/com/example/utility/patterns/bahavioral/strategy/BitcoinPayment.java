@@ -1,7 +1,7 @@
 package com.example.utility.patterns.bahavioral.strategy;
 
 public class BitcoinPayment implements PaymentStrategy {
-    private String walletAddress;
+    private final String walletAddress;
 
     public BitcoinPayment(String walletAddress) {
         this.walletAddress = walletAddress;

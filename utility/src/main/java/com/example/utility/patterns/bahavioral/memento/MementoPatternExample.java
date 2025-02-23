@@ -2,6 +2,10 @@ package com.example.utility.patterns.bahavioral.memento;
 
 public class MementoPatternExample {
     public static void main(String[] args) {
+        /*
+         *Memento is a behavioral design pattern that lets you save and restore the previous state of an object
+         *without revealing the details of its implementation.
+         * */
         TextEditor editor = new TextEditor();
         TextEditorHistory history = new TextEditorHistory();
 

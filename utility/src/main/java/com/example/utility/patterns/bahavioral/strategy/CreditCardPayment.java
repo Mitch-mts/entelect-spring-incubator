@@ -1,7 +1,7 @@
 package com.example.utility.patterns.bahavioral.strategy;
 
 public class CreditCardPayment implements PaymentStrategy {
-    private String cardNumber;
+    private final String cardNumber;
 
     public CreditCardPayment(String cardNumber) {
         this.cardNumber = cardNumber;

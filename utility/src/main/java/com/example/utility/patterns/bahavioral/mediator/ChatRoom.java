@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ChatRoom implements ChatMediator {
-    private List<User> users;
+    private final List<User> users;
 
     public ChatRoom() {
         this.users = new ArrayList<>();

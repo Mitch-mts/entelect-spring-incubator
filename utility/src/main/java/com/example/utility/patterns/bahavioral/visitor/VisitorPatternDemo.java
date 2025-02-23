@@ -5,6 +5,9 @@ import java.util.List;
 
 public class VisitorPatternDemo {
     public static void main(String[] args) {
+        /*
+        * Visitor is a behavioral design pattern that lets you separate algorithms from the objects on which they operate.
+        * */
         List<Shape> shapes = new ArrayList<>();
         shapes.add(new Circle(5));
         shapes.add(new Rectangle(4, 6));

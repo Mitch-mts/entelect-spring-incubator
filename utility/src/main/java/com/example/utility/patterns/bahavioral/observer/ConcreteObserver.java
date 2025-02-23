@@ -1,7 +1,7 @@
 package com.example.utility.patterns.bahavioral.observer;
 
 class ConcreteObserver implements Observer {
-    private String name;
+    private final String name;
 
     public ConcreteObserver(String name) {
         this.name = name;

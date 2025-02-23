@@ -1,14 +1,13 @@
 package com.example.utility.patterns.bahavioral.visitor;
 
+import lombok.Getter;
+
+@Getter
 public class Circle implements Shape {
-    private double radius;
+    private final double radius;
 
     public Circle(double radius) {
         this.radius = radius;
-    }
-
-    public double getRadius() {
-        return radius;
     }
 
     @Override

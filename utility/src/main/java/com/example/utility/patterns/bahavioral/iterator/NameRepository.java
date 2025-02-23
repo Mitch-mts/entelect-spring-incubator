@@ -1,7 +1,7 @@
 package com.example.utility.patterns.bahavioral.iterator;
 
 class NameRepository implements Container {
-    private String[] names = {"John", "Jane", "Alice", "Bob"};
+    private final String[] names = {"John", "Jane", "Alice", "Bob"};
     
     @Override
     public Iterator getIterator() {

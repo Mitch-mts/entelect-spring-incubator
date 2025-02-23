@@ -2,6 +2,10 @@ package com.example.utility.patterns.bahavioral.strategy;
 
 public class Main {
     public static void main(String[] args) {
+        /*
+        *
+        * Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class,
+        * and make their objects interchangeable.*/
         PaymentContext context = new PaymentContext();
 
         // Using Credit Card
