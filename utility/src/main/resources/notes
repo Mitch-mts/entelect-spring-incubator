@@ -16,3 +16,88 @@ It is defined by setting the value prototype to the @Scope annotation in the bea
 6. websocket
 
 among the 6 these ones are only available in a web-aware application which are: request, session, application and websocket
+
+Design Patterns
+
+1. Creational
+
+a) Singleton
+- Spring beans by default are singletons eg a class with @Service will be a singleton as it should only have one instance
+
+b) Factory
+- used in bean factory and app context. It is also used in creating objects dynamically based on configs or conditions
+eg  @Bean
+       public UserService userService() {
+           return new UserService(); // Factory method creating an object
+       }
+
+
+c) Builder
+- Creation of complex objects in a readable manner.
+- Often used in DTOs mainly by use of the @Builder annotation using lombok but can be explicitly set without lombok
+- usage is in the DTOs where we have a builder lombok
+
+d) Abstract
+
+e) Prototype
+- used each time a new instance of a bean is required each time its injected
+- use of the @Scope("prototype") on top of the bean is essential
+- usage in projects not seen yet
+
+2. Structural
+
+a) Adapter
+- used when integrating to an API which has different fields as our service
+- used in Open market
+- integrating to a payment gateway with XML responses and converting to json mapping fields
+
+b) Bridge
+- making use of an interface with the same method used in different platforms with different implementations.
+- Multi class implementation support
+- Open market on the success and failure callback methods
+
+c) Composite
+d) Decorator
+- used in adding logging to business logging
+
+e) Facade
+- use of an interface to hide business logic of implementation when an API call is done from controller to business layer
+- or calling an implementation form another class using an interface reference as a facade
+
+f) Flyweight
+g) Proxy
+- used in AOP by logging service implementations via aspect programming
+- not really seen yet in project
+
+
+3. Behavioral
+
+a) Chain of responsibility
+- private methods to validate incoming requests for creation and updating mostly
+- open market requests to check if requests are valid
+- also in exception handling in scenarios of record not found or illegal state exceptions in OM
+
+b) Command
+- not yet identified
+
+c) Iterator
+d) Mediator
+ - used in Rest Controller classes by use of the @RestController annotation between the service implementation and client Api calls
+
+e) Memento
+f) Observer
+- code base to send emails making use of the asynchronous feature
+- usually after the event of a user account having been created and send the update
+
+g) State
+- not yet identified
+
+h) Strategy
+- used in open market to have separate implementations for failure and success callbacks from vopd
+- use of different payment methods, once in Instapay
+
+i) Template method
+- not yet identified
+
+j) Visitor
+ - not yet identified
