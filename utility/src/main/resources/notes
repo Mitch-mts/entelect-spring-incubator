@@ -82,9 +82,12 @@ b) Command
 
 c) Iterator
 d) Mediator
- - used in Rest Controller classes by use of the @RestController annotation between the service implementation and client Api calls
+ - used in Rest Controller classes by use of the @RestController annotation
+ between the service implementation and client Api calls
 
 e) Memento
+- example Shopping Cart with Undo Feature
+- A user can add or remove products from a shopping cart, and if they make a mistake, they can undo the last action.
 f) Observer
 - code base to send emails making use of the asynchronous feature
 - usually after the event of a user account having been created and send the update
