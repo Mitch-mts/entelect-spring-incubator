@@ -81,6 +81,9 @@ b) Command
 - not yet identified
 
 c) Iterator
+- Iterator Pattern concept is somewhat similar to how a Spring Data Repository works when retrieving user details from DB
+in our case it could be claims and policies
+
 d) Mediator
  - used in Rest Controller classes by use of the @RestController annotation
  between the service implementation and client Api calls
@@ -88,12 +91,14 @@ d) Mediator
 e) Memento
 - example Shopping Cart with Undo Feature
 - A user can add or remove products from a shopping cart, and if they make a mistake, they can undo the last action.
+
 f) Observer
 - code base to send emails making use of the asynchronous feature
 - usually after the event of a user account having been created and send the update
 
 g) State
 - not yet identified
+- Order Processing System
 
 h) Strategy
 - used in open market to have separate implementations for failure and success callbacks from vopd
@@ -103,4 +108,5 @@ i) Template method
 - not yet identified
 
 j) Visitor
- - not yet identified
+ - not yet identified, dont think we have used it in our project
+ - Logging Different Entities in a Spring Boot Application
