@@ -78,7 +78,8 @@ a) Chain of responsibility
 - also in exception handling in scenarios of record not found or illegal state exceptions in OM
 
 b) Command
-- not yet identified
+- extending the JavaDelegate in Camunda delegates
+- JavaDelegate follows this principle by encapsulating business logic inside a reusable class, which is then executed by the workflow engine.
 
 c) Iterator
 - Iterator Pattern concept is somewhat similar to how a Spring Data Repository works when retrieving user details from DB
@@ -91,6 +92,7 @@ d) Mediator
 e) Memento
 - example Shopping Cart with Undo Feature
 - A user can add or remove products from a shopping cart, and if they make a mistake, they can undo the last action.
+- in IWX no example found
 
 f) Observer
 - code base to send emails making use of the asynchronous feature
@@ -105,8 +107,23 @@ h) Strategy
 - use of different payment methods, once in Instapay
 
 i) Template method
-- not yet identified
+- RestTemplate, by providing a predefined algorithm for executing HTTP requests while allowing customization through callbacks.
+
+How the Template Method Works in RestTemplate
+
+    Defines a Standard Workflow
+        Opens a connection
+        Serializes request data
+        Sends the request
+        Handles response or errors
+        Closes the connection
+    Allows Customization via Callbacks
+        RequestCallback for modifying the request
+        ResponseExtractor for customizing response handling
+        ErrorHandler for exception handling
 
 j) Visitor
  - not yet identified, dont think we have used it in our project
  - Logging Different Entities in a Spring Boot Application
+ - in IWX Camunda's Decision Model and Notation (DMN) engine, rules are evaluated using a Visitor-like pattern.
+          Each decision table is traversed and evaluated row by row.
